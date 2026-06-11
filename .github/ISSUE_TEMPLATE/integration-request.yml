@@ -1,0 +1,43 @@
+name: Request integration / quote
+description: Reach out for a license, integration, or audit-firm partnership.
+title: "[Integration] "
+labels: ["integration-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the interest in `invariant-bounty-guard`.
+
+        For sensitive discussions (deployment details, treasury size, audit reports), prefer email at **voltmattty77@gmail.com** or Telegram **@voltgzer0**. This template is for the discovery thread only.
+  - type: input
+    id: org
+    attributes:
+      label: Organization
+      description: Protocol, audit firm, or ecosystem.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Interest
+      options:
+        - Single-protocol integration (license + integration support)
+        - Audit-firm whitelabel
+        - L1 / L2 ecosystem partnership
+        - General question
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What invariant are you protecting? Current TVL? Audit history? Timeline?
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Preferred contact channel
+      description: Email or Telegram handle for follow-up.
+    validations:
+      required: true

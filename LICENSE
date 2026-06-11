@@ -1,0 +1,47 @@
+                    INVARIANT BOUNTY GUARD — LICENSE NOTICE
+
+Copyright (c) 2026 voltgzer0. All rights reserved.
+
+This repository publishes a public interface (the file `src/IInvariantGuard.sol`
+and supporting documentation in `README.md`, `SECURITY.md`, and similar files)
+under the MIT License, reproduced below.
+
+The implementation of the Invariant Bounty Guard primitive, including but not
+limited to:
+
+  - the two-frame revert/catch dispatch logic,
+  - the conditional pause and false-trigger DoS guard,
+  - the pull-pattern escrow and bounty accounting,
+  - the monetization layer (Marketplace, RevenueShareGuard, RevenueShareVault),
+  - integration code, deployment scripts, and audit artifacts,
+
+is NOT distributed under this repository and is NOT covered by the MIT grant
+below. The implementation is proprietary work of voltgzer0, available under
+separate commercial license. Contact voltmattty77@gmail.com for terms.
+
+Reverse-engineering, re-implementing, or reproducing the implementation from
+the published interface and documentation in this repository for commercial
+deployment without a separate license is not authorized.
+
+
+                              MIT LICENSE
+                  (applies ONLY to the published interface)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of `src/IInvariantGuard.sol` and the prose documentation in this repository
+(the "Interface Materials"), to deal in the Interface Materials without
+restriction, including without limitation the rights to use, copy, modify,
+merge, publish, distribute, sublicense, and/or sell copies of the Interface
+Materials, and to permit persons to whom the Interface Materials are furnished
+to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Interface Materials.
+
+THE INTERFACE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
+OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE INTERFACE MATERIALS OR THE USE
+OR OTHER DEALINGS IN THE INTERFACE MATERIALS.

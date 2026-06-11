@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Email (preferred for sensitive discussions)
+    url: mailto:voltmattty77@gmail.com
+    about: For licensing, deployment details, or anything involving treasury sizes.
+  - name: Telegram
+    url: https://t.me/voltgzer0
+    about: Fast async channel for time-sensitive integrations.
