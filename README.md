@@ -68,6 +68,28 @@ Four Foundry property tests covering honest path, real breach, false-trigger DoS
 
 Implementation is delivered under license. Reach out below.
 
+## Extension: third-party-sponsored bounty escrow
+
+[`IBountyVault.sol`](src/IBountyVault.sol) — the interface for sponsoring a bounty on an `InvariantGuard`-protected target you do not control.
+
+The standard pattern collapses target, escrow, and payout into one contract — works when the protocol funds its own bounty, blocks third parties (audit firms, ecosystem programmes, insurance pools) from underwriting a target's invariant. `IBountyVault` is the cleanest split:
+
+```
+sponsor  ──fund──▶  BountyVault  ◀──notifyBreach──  guarded target
+                          │
+                          └─ pendingBounty[reporter]  ──claim──▶  reporter
+```
+
+Properties:
+
+- Sponsor whitelists which targets can trigger payouts.
+- Targets can only credit reporters, never withdraw escrow directly.
+- Pull-pattern claims; payout is atomic with the breach event.
+- Sponsor can revoke a misbehaving integration; pending credits earned beforehand are preserved.
+- Target's pause / rollback semantics remain unchanged; the escrow lives elsewhere.
+
+Pair with the `BountyConnectorGuard` variant of `InvariantGuard` to wire a target into this escrow. Implementation delivered under license.
+
 ## Who this is for
 
 - **DeFi protocols** with accounting invariants — vaults, lending, AMMs, perps, RWA, stablecoin issuers.
@@ -86,14 +108,15 @@ Reach out for:
 - a license quote,
 - audit-firm partnership terms.
 
-## Contact
+## Author
 
-- **GitHub**: [voltgzer0](https://github.com/voltgzer0)
-- **Email**: voltmattty77@gmail.com
-- **Telegram**: @voltgzer0
-- **X**: [@voltgzer0](https://x.com/voltgzer0)
+Built by [voltgzer0](https://github.com/voltgzer0) — part of the **Voltgzer0 Labs Ltd** security portfolio.
 
-Open an issue from the [`Request integration / quote`](../../issues/new/choose) template if you prefer a public discovery thread.
+Contact: [X](https://x.com/voltgzer0) · [Telegram](https://t.me/voltgzer0) · [Cantina](https://cantina.xyz/u/voltgzer0) · `voltmattty77@gmail.com` · [GitHub](https://github.com/voltgzer0)
+
+Prefer a public thread? Open an [issue](../../issues/new).
+
+Whitehat. Available for integration, licensing, and audit-firm partnerships.
 
 ---
 
